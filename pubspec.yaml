@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^1.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -70,6 +71,9 @@ flutter:
     - family: Century Gothic
       fonts:
         - asset: assets/fonts/gothic.TTF
+    - family: SUNA Arial
+      fonts:
+        - asset: assets/fonts/sab.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
