@@ -11,16 +11,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    // to get size
     var size = MediaQuery.of(context).size;
+
+    // Style
+    var cardTextStyle = TextStyle(
+        fontFamily: 'SUNA Arial', 
+        fontSize: 12,
+        color: Color.fromRGBO(63, 63, 63, 1));
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Container(
+            
             height: size.height * .3,
             decoration: BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.topCenter,
-                  image: AssetImage('assets/images/homebanner.png')),
+                  image: AssetImage('assets/images/homebanner4.png')),
             ),
           ),
           SafeArea(
@@ -29,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: 64,
+                    height: 100,
                     margin: EdgeInsets.only(bottom: 40),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,28 +70,50 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 11),
                             )
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
                   
                   Expanded(
                     child: GridView.count(
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 20,
+                        crossAxisSpacing: 20,
                         primary: false,
                         children: <Widget>[
                           Card(
+                            shape:RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)
+                            ) ,
                             elevation:4,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 SvgPicture.network(
-                                    'https://www.svgrepo.com/show/327459/people.svg', height:128,),
-                                Text('Saving Groups')
+                                    'https://www.svgrepo.com/show/2026/two-persons-talking-about-money.svg', height:80,),
+                                Text('Saving Groups', style: cardTextStyle,)
                               ],
                             ),
                           ),
+
+                          //secnd Card
+                           Card(
+                            shape:RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)
+                            ) ,
+                            elevation:4,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SvgPicture.network(
+                                    'https://www.svgrepo.com/show/21973/money.svg', height:80,),
+                                Text('Transactions', style: cardTextStyle,)
+                              ],
+                            ),
+                          ),
+                      
+                     
+                     
                         ],
                         crossAxisCount: 2),
                   ),
